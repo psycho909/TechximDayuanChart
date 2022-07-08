@@ -1,30 +1,98 @@
 .main {
+	padding: 0 16px 16px;
 	&-title {
+		font-size: 30px;
+		padding: 16px 0;
+	}
+	&-box {
+		background-color: #fff;
+		border-radius: 16px;
+		border: 1px solid #ddd;
+		padding: 12px;
 	}
 	&-col {
+		display: flex;
+		margin-right: 48px;
+		align-items: center;
+		&:last-child {
+			margin-right: 0;
+		}
 		&--3 {
+			width: 33%;
 		}
 	}
 	&-form {
+		margin-bottom: 16px;
+		display: flex;
+		align-items: center;
 	}
 	&-control {
 		&__title {
+			margin-right: 24px;
+		}
+		&__dash {
+			margin: 0 12px;
 		}
 		&__select {
+			padding: 12px 6px;
+			border: 1px solid #ddd;
+			border-radius: 12px;
+			&--s {
+				width: 120px;
+			}
 		}
 		&__submit {
+			background-color: #17a2b8;
+			border: none;
+			color: #fff;
+			padding: 10px 18px;
+			border-radius: 12px;
 		}
 	}
 	&-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 16px;
+		margin-bottom: 16px;
 	}
 	&-map {
 	}
 	&-info {
 	}
 	&-result {
+		padding: 24px 12px;
+		box-shadow: 0 2px 2px rgba(#000, 0.15);
+		border-radius: 12px;
+		margin-bottom: 16px;
+		border-left: 4px solid #17a2b8;
+		&__box {
+			margin-bottom: 12px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 	&-suggest {
-	}
-	&-chart {
+		background-color: #17a2b8;
+		color: #fff;
+		padding: 12px;
+		border-radius: 12px;
+		&__title {
+			display: flex;
+			align-items: center;
+			margin-bottom: 12px;
+			&-icon {
+				width: 8px;
+				height: 30px;
+				background-size: contain;
+				background-image: url("./img/exclamation-mark.png");
+				margin-right: 12px;
+			}
+		}
+		&__content {
+			p + p {
+				margin-top: 12px;
+			}
+		}
 	}
 }

@@ -1,7 +1,12 @@
 .menu {
 	width: 260px;
-	background-color: #183380;
+	background-color: #343a40;
 	&-title {
+		color: #fff;
+		font-size: 24px;
+		text-align: center;
+		padding: 16px 0;
+		border-bottom: 1px solid #606060;
 	}
 	&-ul {
 		font-size: 16px;
@@ -10,8 +15,18 @@
 
 	&-li {
 	}
-	&__link {
-		padding: 13px 15px 12px;
+	&-link {
+		width: 100%;
+		padding: 16px 16px 16px;
+		display: block;
+		position: relative;
+		text-decoration: none;
+		color: #fff;
+		display: flex;
+		align-items: center;
+		&:hover {
+			background-color: lighten(#343a40, 15);
+		}
 		&.on {
 			background: #ec9c00;
 		}
@@ -20,6 +35,7 @@
 			height: 30px;
 			background-size: cover;
 			background-image: url("./img/stats.png");
+			margin-right: 24px;
 		}
 		&__text {
 		}
@@ -28,23 +44,38 @@
 		&:before {
 			content: "";
 			position: absolute;
-			top: 0;
-			right: 0;
+			top: 50%;
+			right: 16px;
+			transform: translateY(-50%);
 			width: 18px;
 			height: 12px;
 			background-image: url(./img/icon-slide.png);
 		}
 		&__ul {
-			background: #102256;
+			background: darken(#343a40, 10);
 		}
 		&__link {
-			padding: 12px 0 12px 60px;
+			padding: 16px 0 16px 24px;
 			color: #656565;
+			text-decoration: none;
+			display: block;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			&:hover {
+				background-color: lighten(darken(#343a40, 10), 5);
+			}
 			&.on {
 				color: #fff;
 			}
 		}
 		&__icon {
+			width: 20px;
+			height: 20px;
+			margin-right: 24px;
+			align-items: center;
+			border: 1px solid #eee;
+			border-radius: 50%;
 		}
 		&__text {
 		}
