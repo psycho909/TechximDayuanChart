@@ -13,43 +13,102 @@
 		<script src="./vendors/echarts.min.js"></script>
 	</head>
 	<body>
-		<!-- menu開關 -->
-		<div class="menu-open">
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-		<!-- menu -->
-		<div class="menu">
-			<div class="menu-close">
-				<span></span>
-				<span></span>
+		<div class="container">
+			<!-- menu -->
+			<div class="menu">
+				<div class="menu-title">
+					<span>統計與分析</span>
+				</div>
+				<ul class="menu-ul">
+					<li class="menu-li">
+						<a href="javascript:;" class="menu-link">
+							<span class="menu-link__icon"></span>
+							<span class="menu-link__text">其他排水分析</span>
+						</a>
+					</li>
+					<li class="menu-li">
+						<a href="javascript:;" class="menu-link">
+							<span class="menu-link__icon"></span>
+							<span class="menu-link__text">纜線分析</span>
+						</a>
+					</li>
+					<li class="menu-li">
+						<a href="javascript:;" class="menu-link menu-drop">
+							<span class="menu-link__icon"></span>
+							<span class="menu-link__text">雨水下水道</span>
+						</a>
+						<ul class="menu-drop__ul">
+							<li class="menu-drop__li">
+								<a href="javascript:;" class="menu-drop__link">
+									<span class="menu-drop__icon"></span>
+									<span class="menu-drop__text">人孔分析</span>
+								</a>
+							</li>
+							<li class="menu-drop__li">
+								<a href="javascript:;" class="menu-drop__link">
+									<span class="menu-drop__icon"></span>
+									<span class="menu-drop__text">管線分析</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="menu-li">
+						<a href="javascript:;" class="menu-link">
+							<span class="menu-link__icon"></span>
+							<span class="menu-link__text">淹水調查分析</span>
+						</a>
+					</li>
+				</ul>
 			</div>
-			<div class="menu-title">
-				<span>大園區水利工程及災害防汛資訊系統</span>
+			<!-- 內容 -->
+			<div class="main">
+				<!-- 標題 -->
+				<div class="main-title"></div>
+				<!-- 控制區塊 -->
+				<div class="main-form">
+					<div class="main-col main-col--3">
+						<div class="main-control__title">年度:</div>
+						<select class="main-control__select" id="year1">
+							<option value="-1">請選擇</option>
+							<option value="a">大園都市計畫</option>
+							<option value="b">大園(菓林)都市計畫</option>
+							<option value="c">桃園航空貨通園區暨客運園區(大園南港地區)特定計里</option>
+						</select>
+						<span>-</span>
+						<select class="main-control__select" id="year2">
+							<option value="-1">請選擇</option>
+							<option value="a">大園都市計畫</option>
+							<option value="b">大園(菓林)都市計畫</option>
+							<option value="c">桃園航空貨通園區暨客運園區(大園南港地區)特定計里</option>
+						</select>
+					</div>
+					<div class="main-col main-col--3">
+						<div class="main-control__title">排水路名稱</div>
+						<select class="main-control__select" id="road">
+							<option value="-1">請選擇</option>
+							<option value="a">大園都市計畫</option>
+							<option value="b">大園(菓林)都市計畫</option>
+							<option value="c">桃園航空貨通園區暨客運園區(大園南港地區)特定計里</option>
+						</select>
+					</div>
+					<div class="main-col main-col--3">
+						<button type="button" class="main-control__submit">查詢</button>
+					</div>
+				</div>
+				<div class="main-content">
+					<!-- 地圖區塊 -->
+					<div id="map" class="main-map"></div>
+					<div class="main-info">
+						<!-- 訊息區塊 -->
+						<div class="main-result"></div>
+						<!-- 建議方針區塊 -->
+						<div class="main-suggest"></div>
+					</div>
+				</div>
+				<!-- 圖表區塊 -->
+				<div class="main-chart"></div>
 			</div>
-			<ul class="menu-ul">
-				<li class="menu-li">
-					<a href="javascript:;" class="menu-li__link login-status" data-status="login">
-						<span class="menu-li__icon"></span>
-						<span class="menu-li__text">登入</span>
-					</a>
-				</li>
-				<li class="menu-li">
-					<a href="javascript:;" class="menu-li__link">
-						<span class="menu-li__icon"></span>
-						<span class="menu-li__text">使用說明</span>
-					</a>
-				</li>
-				<li class="menu-li">
-					<a href="javascript:;" class="menu-li__link">
-						<span class="menu-li__icon"></span>
-						<span class="menu-li__text">網站導覽</span>
-					</a>
-				</li>
-			</ul>
 		</div>
-		<div class="container"></div>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN9bmjbWQ8eYZh9YvzBeFuEKurroVxwmw&callback=_initMap&libraries=places" async defer></script>
 		<script src="./Scripts/default.js"></script>
 	</body>
