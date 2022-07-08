@@ -7,6 +7,154 @@ function _initMap() {
 }
 let map = null;
 
+function Pie(dom, title, data) {
+	var myChart = echarts.init(dom, null, {
+		renderer: "canvas",
+		useDirtyRect: false
+	});
+	var option = {
+		tooltip: {
+			trigger: "item"
+		},
+		title: {
+			text: title,
+			left: "center"
+		},
+		series: [
+			{
+				type: "pie",
+				label: {
+					// b 數據名
+					// c 數據值
+					formatter: "{b}\n{c}"
+				},
+				data: data,
+				color: ["#ACACAC", "#F5843F", "#3164BE", "#FAC200"],
+				radius: "60%"
+			}
+		]
+	};
+	myChart.setOption(option);
+	window.addEventListener("resize", myChart.resize);
+}
+
+// 圓環圖
+function Doughnut(dom, title, data) {
+	var myChart = echarts.init(dom, null, {
+		renderer: "canvas",
+		useDirtyRect: false
+	});
+	var option = {
+		tooltip: {
+			trigger: "item"
+		},
+		title: {
+			text: title,
+			left: "center",
+			top: "center"
+		},
+		series: [
+			{
+				type: "pie",
+				label: {
+					// b 數據名
+					// c 數據值
+					formatter: "{b}\n{c}"
+				},
+				data: data,
+				color: ["#ACACAC", "#F5843F", "#3164BE", "#FAC200"],
+				radius: ["60%", "80%"]
+			}
+		]
+	};
+	myChart.setOption(option);
+	window.addEventListener("resize", myChart.resize);
+}
+
+// 圓柱圖
+function Bar(dom, data) {
+	var myChart = echarts.init(dom, null, {
+		renderer: "canvas",
+		useDirtyRect: false
+	});
+
+	var series = data.datas.reduce(function (p, c) {
+		return p.concat({
+			name: c.name,
+			type: "bar",
+			stack: "total",
+			label: {
+				show: true
+			},
+			emphasis: {
+				focus: "series"
+			},
+			data: c.data
+		});
+	}, []);
+	var option = {
+		// hover
+		tooltip: {
+			trigger: "axis",
+			axisPointer: {
+				type: "shadow"
+			}
+		},
+		// 設置每個bar產生的name label
+		legend: {
+			// 方向
+			// orient: "vertical",
+			// 位置
+			// right: 10,
+			// 位置
+			// top: "center"
+		},
+		// 設置圖表的位置
+		grid: {
+			left: "3%",
+			right: "4%",
+			bottom: "3%",
+			containLabel: true
+		},
+		yAxis: {
+			type: "value"
+		},
+		xAxis: {
+			type: "category",
+			data: data.x
+		},
+		series: series
+	};
+	myChart.setOption(option);
+	window.addEventListener("resize", myChart.resize);
+}
+var BarData = {
+	x: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+	datas: [
+		{
+			name: "Direct",
+			data: [320, 302, 301, 334, 390, 330, 320]
+		},
+		{
+			name: "Mail Ad",
+			data: [120, 132, 101, 134, 90, 230, 210]
+		},
+		{
+			name: "Affiliate Ad",
+			data: [220, 182, 191, 234, 290, 330, 310]
+		},
+		{
+			name: "Video Ad",
+			data: [150, 212, 201, 154, 190, 330, 410]
+		},
+		{
+			name: "Search Engine",
+			data: [820, 832, 901, 934, 1290, 1330, 1320]
+		}
+	]
+};
+
+Bar(document.querySelector("#A"), BarData);
 var datas = [
 	[
 		{
@@ -41,62 +189,9 @@ var datas = [
 		}
 	]
 ];
+// Pie(document.querySelector("#A"), "改善情形", datas[0]);
 
 // 改善情形
-var myChartA = echarts.init(document.getElementById("A"));
-option = {
-	title: {
-		text: "改善情形",
-		left: "center",
-		top: "center"
-	},
-	series: [
-		{
-			type: "pie",
-			label: {
-				// b 數據名
-				// c 數據值
-				formatter: "{b}\n{c}"
-			},
-			data: datas[0],
-			color: ["#ACACAC", "#F5843F", "#3164BE", "#FAC200"],
-			radius: [60, 80]
-		}
-	]
-};
-myChartA.setOption(option);
-window.addEventListener("resize", myChartA.resize);
+// Doughnut(document.querySelector("#A"), "改善情形", datas[0]);
 // 檢查結果
-var myChartB = echarts.init(document.getElementById("B"), null, {
-	renderer: "canvas",
-	useDirtyRect: false
-});
-option = {
-	title: {
-		text: "檢查結果",
-		left: "center",
-		top: "center"
-	},
-	series: [
-		{
-			type: "pie",
-			label: {
-				// b 數據名
-				// c 數據值
-				formatter: "{b}\n{c}"
-			},
-			data: datas[1],
-			color: ["#ACACAC", "#F5843F", "#3164BE", "#FAC200"],
-			radius: [60, 80]
-		}
-	]
-};
-myChartB.setOption(option);
-window.addEventListener("resize", myChartB.resize);
-function Pie() {}
-
-// 圓環圖
-function Doughnut() {}
-
-// 圓柱圖
-function Bar() {}
+// Doughnut(document.querySelector("#B"), "檢查結果", datas[1]);
