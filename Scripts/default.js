@@ -7,7 +7,7 @@ function _initMap() {
 }
 let map = null;
 
-function Pie(dom, title, data) {
+function Pie(dom, data) {
 	var myChart = echarts.init(dom, null, {
 		renderer: "canvas",
 		useDirtyRect: false
@@ -16,17 +16,14 @@ function Pie(dom, title, data) {
 		tooltip: {
 			trigger: "item"
 		},
-		title: {
-			text: title,
-			left: "center"
-		},
 		series: [
 			{
 				type: "pie",
 				label: {
 					// b 數據名
 					// c 數據值
-					formatter: "{b}\n{c}"
+					formatter: "{b}\n{c}",
+					position: "inside"
 				},
 				data: data,
 				color: ["#ACACAC", "#F5843F", "#3164BE", "#FAC200"],
@@ -59,11 +56,12 @@ function Doughnut(dom, title, data) {
 				label: {
 					// b 數據名
 					// c 數據值
-					formatter: "{b}\n{c}"
+					formatter: "{b}\n{c}",
+					position: "inside"
 				},
 				data: data,
 				color: ["#ACACAC", "#F5843F", "#3164BE", "#FAC200"],
-				radius: ["60%", "80%"]
+				radius: ["40%", "80%"]
 			}
 		]
 	};
@@ -128,70 +126,13 @@ function Bar(dom, data) {
 	myChart.setOption(option);
 	window.addEventListener("resize", myChart.resize);
 }
-var BarData = {
-	x: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-	datas: [
-		{
-			name: "Direct",
-			data: [320, 302, 301, 334, 390, 330, 320]
-		},
-		{
-			name: "Mail Ad",
-			data: [120, 132, 101, 134, 90, 230, 210]
-		},
-		{
-			name: "Affiliate Ad",
-			data: [220, 182, 191, 234, 290, 330, 310]
-		},
-		{
-			name: "Video Ad",
-			data: [150, 212, 201, 154, 190, 330, 410]
-		},
-		{
-			name: "Search Engine",
-			data: [820, 832, 901, 934, 1290, 1330, 1320]
-		}
-	]
-};
 
-Bar(document.querySelector("#A"), BarData);
-var datas = [
-	[
-		{
-			value: 15,
-			name: "改善完成"
-		},
-		{
-			value: 23,
-			name: "改善中"
-		},
-		{
-			value: 62,
-			name: "NG數量"
-		}
-	],
-	[
-		{
-			value: 7,
-			name: "立即"
-		},
-		{
-			value: 14,
-			name: "注意"
-		},
-		{
-			value: 22,
-			name: "計畫"
-		},
-		{
-			value: 57,
-			name: "正常"
-		}
-	]
-];
-// Pie(document.querySelector("#A"), "改善情形", datas[0]);
-
-// 改善情形
-// Doughnut(document.querySelector("#A"), "改善情形", datas[0]);
-// 檢查結果
-// Doughnut(document.querySelector("#B"), "檢查結果", datas[1]);
+$(".menu-drop").on("click", function () {
+	if ($(this).hasClass("slide")) {
+		$(this).removeClass("slide");
+		$(".menu-drop__ul").slideUp();
+		return;
+	}
+	$(this).addClass("slide");
+	$(".menu-drop__ul").slideDown();
+});

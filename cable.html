@@ -21,13 +21,13 @@
 				</div>
 				<ul class="menu-ul">
 					<li class="menu-li">
-						<a href="index.html" class="menu-link on">
+						<a href="index.html" class="menu-link">
 							<span class="menu-link__icon"></span>
 							<span class="menu-link__text">其他排水分析</span>
 						</a>
 					</li>
 					<li class="menu-li">
-						<a href="cable.html" class="menu-link">
+						<a href="cable.html" class="menu-link on">
 							<span class="menu-link__icon"></span>
 							<span class="menu-link__text">纜線分析</span>
 						</a>
@@ -63,7 +63,7 @@
 			<!-- 內容 -->
 			<div class="main">
 				<!-- 標題 -->
-				<div class="main-title">其他排水分析面板</div>
+				<div class="main-title">纜線分析面板</div>
 				<!-- 控制區塊 -->
 				<div class="main-form main-box">
 					<div class="main-col">
@@ -83,7 +83,7 @@
 						</select>
 					</div>
 					<div class="main-col">
-						<div class="main-control__title">排水路名稱:</div>
+						<div class="main-control__title">附掛形式:</div>
 						<select class="main-control__select" id="road">
 							<option value="-1">請選擇</option>
 							<option value="a">大園都市計畫</option>
@@ -102,19 +102,47 @@
 						<!-- 訊息區塊 -->
 						<div class="main-result grid grid--2">
 							<div class="main-result__box grid-span--2">
-								<span class="main-result__text">其他排水總長度</span>
+								<span class="main-result__text">歷年總長度</span>
 								<span class="main-result__data">110000m</span>
 							</div>
 							<div class="main-result__box grid-span--2">
-								<span class="main-result__text">本年度調查長度(上半年)</span>
+								<span class="main-result__text">本年度契約長度</span>
 								<span class="main-result__data">110000m</span>
 							</div>
 							<div class="main-result__box grid-span--2">
-								<span class="main-result__text">本年度調查長度(下半年)</span>
+								<span class="main-result__text">本年度契約雨水下水道長度</span>
 								<span class="main-result__data">110000m</span>
 							</div>
 							<div class="main-result__box grid-span--2">
-								<span class="main-result__text">本年度清淤長度</span>
+								<span class="main-result__text">本年度契約道路側溝長度</span>
+								<span class="main-result__data">90000m</span>
+							</div>
+							<div class="main-result__box grid-span--1">
+								<span class="main-result__text">北桃園</span>
+								<span class="main-result__data">90000m</span>
+							</div>
+							<div class="main-result__box grid-span--1">
+								<span class="main-result__text">北健</span>
+								<span class="main-result__data">90000m</span>
+							</div>
+							<div class="main-result__box grid-span--1">
+								<span class="main-result__text">佳光</span>
+								<span class="main-result__data">90000m</span>
+							</div>
+							<div class="main-result__box grid-span--1">
+								<span class="main-result__text">台灣固網</span>
+								<span class="main-result__data">90000m</span>
+							</div>
+							<div class="main-result__box grid-span--1">
+								<span class="main-result__text">新世紀</span>
+								<span class="main-result__data">90000m</span>
+							</div>
+							<div class="main-result__box grid-span--1">
+								<span class="main-result__text">亞太</span>
+								<span class="main-result__data">90000m</span>
+							</div>
+							<div class="main-result__box grid-span--1">
+								<span class="main-result__text">南桃園</span>
 								<span class="main-result__data">90000m</span>
 							</div>
 						</div>
@@ -125,30 +153,35 @@
 								<span>建議督導方針</span>
 							</div>
 							<div class="main-suggest__content">
-								<p>NG數量較多排水</p>
-								<p>立即改善較多排水</p>
-								<p>注意改善較多排水</p>
-								<p>計畫改善較多排水</p>
-								<p>需加強督導排水路</p>
+								<p>不合格率較高廠商</p>
+								<p>未改善率較高廠商</p>
+								<p>須加強督導廠商</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- 圖表區塊 -->
 				<div class="main-chart main-box grid grid--12">
-					<!-- 改善情形 -->
-					<div class="main-chart__box grid grid--12 grid-span--6">
-						<div id="A" class="main-chart__data grid-span--12" data-chart="doughnut"></div>
+					<div class="main-chart__box grid-span--8">
+						<div class="main-chart__title">改善率</div>
+						<div id="cable-bar" class="main-chart__data grid-span--4" data-chart="bar"></div>
 					</div>
-					<!-- 檢查結果 -->
-					<div class="main-chart__box grid grid--12 grid-span--6">
-						<div id="B" class="main-chart__data grid-span--12" data-chart="doughnut"></div>
+					<div class="main-chart__box grid-span--4">
+						<div class="main-chart__title">不合格率</div>
+						<div id="cable-pie" class="main-chart__data grid-span--4" data-chart="pie"></div>
+					</div>
+					<div class="main-chart__box grid grid--12 grid-span--12">
+						<div class="main-chart__title grid-span--12">缺失樣態</div>
+						<div id="cable-a" class="main-chart__data grid-span--3" data-chart="doughnut"></div>
+						<div id="cable-b" class="main-chart__data grid-span--3" data-chart="doughnut"></div>
+						<div id="cable-c" class="main-chart__data grid-span--3" data-chart="doughnut"></div>
+						<div id="cable-d" class="main-chart__data grid-span--3" data-chart="doughnut"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN9bmjbWQ8eYZh9YvzBeFuEKurroVxwmw&callback=_initMap&libraries=places" async defer></script>
 		<script src="./Scripts/default.js"></script>
-		<script src="./Scripts/other.js"></script>
+		<script src="./Scripts/cable.js"></script>
 	</body>
 </html>

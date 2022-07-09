@@ -26,3 +26,24 @@ $btnBg: #0078d4;
 	display: grid;
 	grid-template-columns: 260px 1fr;
 }
+.grid {
+	display: grid;
+	column-gap: 16px;
+	row-gap: 16px;
+	&--2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	&--4 {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	&--12 {
+		grid-template-columns: repeat(12, 1fr);
+	}
+	&-span {
+		@for $i from 1 through 12 {
+			&--#{$i} {
+				grid-column: span $i;
+			}
+		}
+	}
+}

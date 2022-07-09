@@ -21,7 +21,7 @@
 				</div>
 				<ul class="menu-ul">
 					<li class="menu-li">
-						<a href="index.html" class="menu-link on">
+						<a href="index.html" class="menu-link">
 							<span class="menu-link__icon"></span>
 							<span class="menu-link__text">其他排水分析</span>
 						</a>
@@ -53,7 +53,7 @@
 						</ul>
 					</li>
 					<li class="menu-li">
-						<a href="flood.html" class="menu-link">
+						<a href="flood.html" class="menu-link on">
 							<span class="menu-link__icon"></span>
 							<span class="menu-link__text">淹水調查分析</span>
 						</a>
@@ -63,7 +63,7 @@
 			<!-- 內容 -->
 			<div class="main">
 				<!-- 標題 -->
-				<div class="main-title">其他排水分析面板</div>
+				<div class="main-title">淹水調查分析面板</div>
 				<!-- 控制區塊 -->
 				<div class="main-form main-box">
 					<div class="main-col">
@@ -83,15 +83,6 @@
 						</select>
 					</div>
 					<div class="main-col">
-						<div class="main-control__title">排水路名稱:</div>
-						<select class="main-control__select" id="road">
-							<option value="-1">請選擇</option>
-							<option value="a">大園都市計畫</option>
-							<option value="b">大園(菓林)都市計畫</option>
-							<option value="c">桃園航空貨通園區暨客運園區(大園南港地區)特定計里</option>
-						</select>
-					</div>
-					<div class="main-col">
 						<button type="button" class="main-control__submit">查詢</button>
 					</div>
 				</div>
@@ -99,25 +90,6 @@
 					<!-- 地圖區塊 -->
 					<div id="map" class="main-map main-box"></div>
 					<div class="main-info main-box">
-						<!-- 訊息區塊 -->
-						<div class="main-result grid grid--2">
-							<div class="main-result__box grid-span--2">
-								<span class="main-result__text">其他排水總長度</span>
-								<span class="main-result__data">110000m</span>
-							</div>
-							<div class="main-result__box grid-span--2">
-								<span class="main-result__text">本年度調查長度(上半年)</span>
-								<span class="main-result__data">110000m</span>
-							</div>
-							<div class="main-result__box grid-span--2">
-								<span class="main-result__text">本年度調查長度(下半年)</span>
-								<span class="main-result__data">110000m</span>
-							</div>
-							<div class="main-result__box grid-span--2">
-								<span class="main-result__text">本年度清淤長度</span>
-								<span class="main-result__data">90000m</span>
-							</div>
-						</div>
 						<!-- 建議方針區塊 -->
 						<div class="main-suggest">
 							<div class="main-suggest__title">
@@ -125,30 +97,39 @@
 								<span>建議督導方針</span>
 							</div>
 							<div class="main-suggest__content">
-								<p>NG數量較多排水</p>
-								<p>立即改善較多排水</p>
-								<p>注意改善較多排水</p>
-								<p>計畫改善較多排水</p>
-								<p>需加強督導排水路</p>
+								<p>改善效率<span class="yellow">低(<=50)、普遍(50< <=70)、高(70< <=100)</span></p>
+								<p>常發生淹水原因(前5名)</p>
+								<p>淹水深度較多比例為</p>
+								<p>淹水是發生月份(前3名)</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- 圖表區塊 -->
 				<div class="main-chart main-box grid grid--12">
-					<!-- 改善情形 -->
-					<div class="main-chart__box grid grid--12 grid-span--6">
-						<div id="A" class="main-chart__data grid-span--12" data-chart="doughnut"></div>
+					<div class="main-chart__box grid-span--12">
+						<div class="main-chart__title">發生時機</div>
+						<div id="flood-bar" class="main-chart__data grid-span--4" data-chart="bar"></div>
 					</div>
-					<!-- 檢查結果 -->
-					<div class="main-chart__box grid grid--12 grid-span--6">
-						<div id="B" class="main-chart__data grid-span--12" data-chart="doughnut"></div>
+					<div class="main-chart__box grid grid--12 grid-span--12">
+						<div class="grid-span--4">
+							<div class="main-chart__title">辦理情形</div>
+							<div id="flood-a" class="main-chart__data" data-chart="doughnut"></div>
+						</div>
+						<div class="grid-span--4">
+							<div class="main-chart__title">原因比例</div>
+							<div id="flood-b" class="main-chart__data" data-chart="doughnut"></div>
+						</div>
+						<div class="grid-span--4">
+							<div class="main-chart__title">淹水深度</div>
+							<div id="flood-c" class="main-chart__data" data-chart="doughnut"></div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN9bmjbWQ8eYZh9YvzBeFuEKurroVxwmw&callback=_initMap&libraries=places" async defer></script>
 		<script src="./Scripts/default.js"></script>
-		<script src="./Scripts/other.js"></script>
+		<script src="./Scripts/flood.js"></script>
 	</body>
 </html>

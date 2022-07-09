@@ -28,19 +28,27 @@
 			background-color: lighten(#343a40, 15);
 		}
 		&.on {
-			background: #ec9c00;
+			background: #17a2b8;
 		}
 		&__icon {
-			width: 30px;
-			height: 30px;
+			width: 20px;
+			height: 20px;
 			background-size: cover;
 			background-image: url("./img/stats.png");
-			margin-right: 24px;
+			margin-right: 16px;
 		}
 		&__text {
 		}
 	}
 	&-drop {
+		&.slide {
+			&:before {
+				transform: translateY(-50%) rotate(180deg);
+			}
+			& + .menu-drop__ul {
+				display: block;
+			}
+		}
 		&:before {
 			content: "";
 			position: absolute;
@@ -53,9 +61,10 @@
 		}
 		&__ul {
 			background: darken(#343a40, 10);
+			display: none;
 		}
 		&__link {
-			padding: 16px 0 16px 24px;
+			padding: 16px 0 16px 16px;
 			color: #656565;
 			text-decoration: none;
 			display: block;
@@ -63,19 +72,34 @@
 			display: flex;
 			align-items: center;
 			&:hover {
-				background-color: lighten(darken(#343a40, 10), 5);
+				background-color: #095864;
 			}
 			&.on {
 				color: #fff;
+				background-color: #095864;
+				.menu-drop__icon {
+					&:before {
+						content: "";
+						width: 9px;
+						height: 9px;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						background-color: #fff;
+						border-radius: 50%;
+					}
+				}
 			}
 		}
 		&__icon {
 			width: 20px;
 			height: 20px;
-			margin-right: 24px;
+			margin-right: 14px;
 			align-items: center;
 			border: 1px solid #eee;
 			border-radius: 50%;
+			position: relative;
 		}
 		&__text {
 		}

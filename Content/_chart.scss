@@ -1,6 +1,13 @@
 .main-chart {
-	display: flex;
 	justify-content: center;
+	&__box {
+		width: 100%;
+	}
+	&__title {
+		font-size: 24px;
+		font-weight: bold;
+		text-align: center;
+	}
 	&__data {
 		width: 100%;
 		&[data-chart="pie"] {

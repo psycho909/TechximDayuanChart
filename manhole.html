@@ -21,7 +21,7 @@
 				</div>
 				<ul class="menu-ul">
 					<li class="menu-li">
-						<a href="index.html" class="menu-link on">
+						<a href="index.html" class="menu-link">
 							<span class="menu-link__icon"></span>
 							<span class="menu-link__text">其他排水分析</span>
 						</a>
@@ -33,13 +33,13 @@
 						</a>
 					</li>
 					<li class="menu-li">
-						<a href="javascript:;" class="menu-link menu-drop">
+						<a href="javascript:;" class="menu-link menu-drop slide on">
 							<span class="menu-link__icon"></span>
 							<span class="menu-link__text">雨水下水道</span>
 						</a>
 						<ul class="menu-drop__ul">
 							<li class="menu-drop__li">
-								<a href="manhole.html" class="menu-drop__link">
+								<a href="manhole.html" class="menu-drop__link on">
 									<span class="menu-drop__icon"></span>
 									<span class="menu-drop__text">人孔分析</span>
 								</a>
@@ -63,7 +63,7 @@
 			<!-- 內容 -->
 			<div class="main">
 				<!-- 標題 -->
-				<div class="main-title">其他排水分析面板</div>
+				<div class="main-title">雨水下水道-人孔分析面板</div>
 				<!-- 控制區塊 -->
 				<div class="main-form main-box">
 					<div class="main-col">
@@ -83,7 +83,7 @@
 						</select>
 					</div>
 					<div class="main-col">
-						<div class="main-control__title">排水路名稱:</div>
+						<div class="main-control__title">都市計畫:</div>
 						<select class="main-control__select" id="road">
 							<option value="-1">請選擇</option>
 							<option value="a">大園都市計畫</option>
@@ -102,20 +102,32 @@
 						<!-- 訊息區塊 -->
 						<div class="main-result grid grid--2">
 							<div class="main-result__box grid-span--2">
-								<span class="main-result__text">其他排水總長度</span>
-								<span class="main-result__data">110000m</span>
+								<span class="main-result__text">人孔總數量</span>
+								<span class="main-result__data">100個</span>
 							</div>
 							<div class="main-result__box grid-span--2">
-								<span class="main-result__text">本年度調查長度(上半年)</span>
-								<span class="main-result__data">110000m</span>
+								<span class="main-result__text">本年度巡查數量</span>
+								<span class="main-result__data">100個</span>
 							</div>
 							<div class="main-result__box grid-span--2">
-								<span class="main-result__text">本年度調查長度(下半年)</span>
-								<span class="main-result__data">110000m</span>
+								<span class="main-result__text">清淤數量</span>
+								<span class="main-result__data">100個</span>
 							</div>
-							<div class="main-result__box grid-span--2">
-								<span class="main-result__text">本年度清淤長度</span>
-								<span class="main-result__data">90000m</span>
+							<div class="main-result__box grid-span--1">
+								<span class="main-result__text">大園</span>
+								<span class="main-result__data">100個</span>
+							</div>
+							<div class="main-result__box grid-span--1">
+								<span class="main-result__text">果林</span>
+								<span class="main-result__data">100個</span>
+							</div>
+							<div class="main-result__box grid-span--1">
+								<span class="main-result__text">客運</span>
+								<span class="main-result__data">100個</span>
+							</div>
+							<div class="main-result__box grid-span--1">
+								<span class="main-result__text">高鐵</span>
+								<span class="main-result__data">100個</span>
 							</div>
 						</div>
 						<!-- 建議方針區塊 -->
@@ -125,30 +137,35 @@
 								<span>建議督導方針</span>
 							</div>
 							<div class="main-suggest__content">
-								<p>NG數量較多排水</p>
-								<p>立即改善較多排水</p>
-								<p>注意改善較多排水</p>
-								<p>計畫改善較多排水</p>
-								<p>需加強督導排水路</p>
+								<p>不合格率較高都市區</p>
+								<p>未改善率較高都市區</p>
+								<p>汰換率較低都市區</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- 圖表區塊 -->
 				<div class="main-chart main-box grid grid--12">
-					<!-- 改善情形 -->
-					<div class="main-chart__box grid grid--12 grid-span--6">
-						<div id="A" class="main-chart__data grid-span--12" data-chart="doughnut"></div>
+					<div class="main-chart__box grid-span--8">
+						<div class="main-chart__title">改善率</div>
+						<div id="manhole-bar" class="main-chart__data grid-span--4" data-chart="bar"></div>
 					</div>
-					<!-- 檢查結果 -->
-					<div class="main-chart__box grid grid--12 grid-span--6">
-						<div id="B" class="main-chart__data grid-span--12" data-chart="doughnut"></div>
+					<div class="main-chart__box grid-span--4">
+						<div class="main-chart__title">不合格率</div>
+						<div id="manhole-pie" class="main-chart__data grid-span--4" data-chart="pie"></div>
+					</div>
+					<div class="main-chart__box grid grid--12 grid-span--12">
+						<div class="main-chart__title grid-span--12">缺失樣態</div>
+						<div id="manhole-a" class="main-chart__data grid-span--3" data-chart="doughnut"></div>
+						<div id="manhole-b" class="main-chart__data grid-span--3" data-chart="doughnut"></div>
+						<div id="manhole-c" class="main-chart__data grid-span--3" data-chart="doughnut"></div>
+						<div id="manhole-d" class="main-chart__data grid-span--3" data-chart="doughnut"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN9bmjbWQ8eYZh9YvzBeFuEKurroVxwmw&callback=_initMap&libraries=places" async defer></script>
 		<script src="./Scripts/default.js"></script>
-		<script src="./Scripts/other.js"></script>
+		<script src="./Scripts/manhole.js"></script>
 	</body>
 </html>
