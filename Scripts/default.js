@@ -128,11 +128,14 @@ function Bar(dom, data) {
 }
 
 $(".menu-drop").on("click", function () {
+	var _this = $(this);
 	if ($(this).hasClass("slide")) {
-		$(this).removeClass("slide");
-		$(".menu-drop__ul").slideUp();
+		$(".menu-drop__ul").slideUp(function () {
+			_this.removeClass("slide");
+		});
 		return;
 	}
-	$(this).addClass("slide");
-	$(".menu-drop__ul").slideDown();
+	$(".menu-drop__ul").slideDown(function () {
+		_this.addClass("slide");
+	});
 });
