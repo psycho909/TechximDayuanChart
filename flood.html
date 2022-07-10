@@ -15,25 +15,26 @@
 	<body>
 		<div class="container">
 			<!-- menu -->
-			<div class="menu">
+			<div class="menu on">
+				<div class="menu-toggle"></div>
 				<div class="menu-title">
 					<span>統計與分析</span>
 				</div>
 				<ul class="menu-ul">
 					<li class="menu-li">
-						<a href="index.html" class="menu-link">
+						<a href="index.html" class="menu-link" data-page="drain">
 							<span class="menu-link__icon"></span>
 							<span class="menu-link__text">其他排水分析</span>
 						</a>
 					</li>
 					<li class="menu-li">
-						<a href="cable.html" class="menu-link">
+						<a href="cable.html" class="menu-link" data-page="cable">
 							<span class="menu-link__icon"></span>
 							<span class="menu-link__text">纜線分析</span>
 						</a>
 					</li>
 					<li class="menu-li">
-						<a href="javascript:;" class="menu-link menu-drop">
+						<a href="javascript:;" class="menu-link menu-drop" data-page="rain">
 							<span class="menu-link__icon"></span>
 							<span class="menu-link__text">雨水下水道</span>
 						</a>
@@ -53,7 +54,7 @@
 						</ul>
 					</li>
 					<li class="menu-li">
-						<a href="flood.html" class="menu-link on">
+						<a href="flood.html" class="menu-link on" data-page="flood">
 							<span class="menu-link__icon"></span>
 							<span class="menu-link__text">淹水調查分析</span>
 						</a>
@@ -62,20 +63,21 @@
 			</div>
 			<!-- 內容 -->
 			<div class="main">
+				<h1 class="main-slogan">大園區水利工程及災害防汛資訊系統</h1>
 				<!-- 標題 -->
 				<div class="main-title">淹水調查分析面板</div>
 				<!-- 控制區塊 -->
 				<div class="main-form main-box">
 					<div class="main-col">
 						<div class="main-control__title">年度:</div>
-						<select class="main-control__select main-control__select--s" id="year1">
+						<select class="main-control__select main-control__select--s" id="year1" data-select="year1">
 							<option value="-1">請選擇</option>
 							<option value="a">大園都市計畫</option>
 							<option value="b">大園(菓林)都市計畫</option>
 							<option value="c">桃園航空貨通園區暨客運園區(大園南港地區)特定計里</option>
 						</select>
 						<span class="main-control__dash">-</span>
-						<select class="main-control__select main-control__select--s" id="year2">
+						<select class="main-control__select main-control__select--s" id="year2" data-select="year2">
 							<option value="-1">請選擇</option>
 							<option value="a">大園都市計畫</option>
 							<option value="b">大園(菓林)都市計畫</option>

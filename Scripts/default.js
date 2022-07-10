@@ -127,8 +127,20 @@ function Bar(dom, data) {
 	window.addEventListener("resize", myChart.resize);
 }
 
+// 選單縮小
+$(".menu-toggle").on("click", function () {
+	if (isMobile.any) {
+		return;
+	}
+	$(".menu").toggleClass("on");
+});
+// 子選單
 $(".menu-drop").on("click", function () {
 	var _this = $(this);
+	if ($(".menu").hasClass("on") || isMobile.any) {
+		_this.toggleClass("slide");
+		return;
+	}
 	if ($(this).hasClass("slide")) {
 		$(".menu-drop__ul").slideUp(function () {
 			_this.removeClass("slide");

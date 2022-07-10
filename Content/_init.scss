@@ -23,8 +23,7 @@ $btnBg: #0078d4;
 	min-height: 100vh;
 	background-color: #f4f6f9;
 	position: relative;
-	display: grid;
-	grid-template-columns: 260px 1fr;
+	display: flex;
 }
 .grid {
 	display: grid;

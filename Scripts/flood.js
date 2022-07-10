@@ -59,3 +59,15 @@ var datas = [
 Doughnut(document.querySelector("#flood-a"), "改善率", datas[1]);
 Doughnut(document.querySelector("#flood-b"), "淹水原因", datas[1]);
 Doughnut(document.querySelector("#flood-c"), "淹水深度", datas[1]);
+
+// 查詢按鈕
+$(".main-control__submit").on("click", function () {
+	var obj = {};
+	$(".main-control__select").each(function (i, v) {
+		if ($(v).val() == -1) {
+			return;
+		}
+		obj[$(v).attr("data-select")] = $(v).val();
+	});
+	console.log(obj);
+});

@@ -3,6 +3,19 @@
 		display: flex;
 		margin-right: 48px;
 		align-items: center;
+		@include media(1024px) {
+			margin-bottom: 16px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		@include media {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-row-gap: vw(16);
+			grid-column-gap: vw(16);
+			margin-right: 0;
+		}
 		&:last-child {
 			margin-right: 0;
 		}
@@ -18,20 +31,21 @@
 		@include media(1024px) {
 			flex-direction: column;
 			align-items: flex-start;
-			.main-col {
-				margin-bottom: 16px;
-				&:last-child {
-					margin-bottom: 0;
-				}
-			}
 		}
 	}
 	&-control {
 		&__title {
 			margin-right: 24px;
+			@include media {
+				grid-column: span 3;
+				margin-right: 0;
+			}
 		}
 		&__dash {
 			margin: 0 12px;
+			@include media {
+				display: none;
+			}
 		}
 		&__select {
 			padding: 12px 6px;
