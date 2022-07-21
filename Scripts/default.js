@@ -13,8 +13,10 @@ function Pie(dom, data) {
 		useDirtyRect: false
 	});
 	var option = {
+		// hover懸浮框
 		tooltip: {
-			trigger: "item"
+			trigger: "item",
+			borderColor: "#FAC858" // 懸浮框顏色
 		},
 		series: [
 			{
@@ -42,8 +44,10 @@ function Doughnut(dom, title, data) {
 		useDirtyRect: false
 	});
 	var option = {
+		// hover 懸浮框
 		tooltip: {
-			trigger: "item"
+			trigger: "item",
+			borderColor: "#FAC858" // 懸浮框顏色
 		},
 		title: {
 			text: title,
@@ -91,12 +95,13 @@ function Bar(dom, data) {
 		});
 	}, []);
 	var option = {
-		// hover
+		// hover時懸浮提示框
 		tooltip: {
 			trigger: "axis",
 			axisPointer: {
 				type: "shadow"
-			}
+			},
+			borderColor: "#FAC858" // 懸浮框顏色
 		},
 		// 設置每個bar產生的name label
 		legend: {

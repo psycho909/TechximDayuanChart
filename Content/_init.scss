@@ -1,18 +1,3 @@
-$bg: rgba(0, 0, 0, 0.7);
-$tabBg: rgba(#292b33, 1);
-$tabFz: #fff;
-$subTabFz: #fce563;
-$subTabFzActive: #fff;
-$borderRight: #fff;
-$fz: #fff;
-$checkBoxBg: #fff;
-$checkBoxPoint: #4472c4;
-$checkBoxBgChecked: #0e8e00;
-$checkBoxPointChecked: #fff;
-$inputBg: #fff;
-$inputBorder: #ccc;
-$searchTitle: #fff;
-$btnBg: #0078d4;
 * {
 	padding: 0;
 	margin: 0;
@@ -21,7 +6,7 @@ $btnBg: #0078d4;
 .container {
 	width: 100%;
 	min-height: 100vh;
-	background-color: #f4f6f9;
+	background-color: $container;
 	position: relative;
 	display: flex;
 }

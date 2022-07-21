@@ -1,6 +1,6 @@
 .menu {
 	width: 260px;
-	background-color: #343a40;
+	background-color: $menuBg;
 	&.on {
 		width: 60px;
 		z-index: 2;
@@ -108,7 +108,7 @@
 		font-size: 20px;
 		text-align: center;
 		padding: 16px 0;
-		border-bottom: 1px solid #606060;
+		border-bottom: 1px solid $menuBorder;
 	}
 	&-ul {
 		font-size: 16px;
@@ -128,7 +128,7 @@
 		display: flex;
 		align-items: center;
 		&:hover {
-			background-color: lighten(#343a40, 15);
+			background-color: lighten($menuBg, 15);
 		}
 		&[data-page="drain"] {
 			.menu-link__icon {
@@ -151,7 +151,7 @@
 			}
 		}
 		&.on {
-			background: #17a2b8;
+			background: $menuCurr;
 		}
 		&__icon {
 			width: 28px;
@@ -185,7 +185,7 @@
 			background-image: url(./img/icon-slide.png);
 		}
 		&__ul {
-			background: darken(#343a40, 10);
+			background: darken($menuBg, 10);
 			display: none;
 		}
 		&__link {
@@ -197,11 +197,11 @@
 			display: flex;
 			align-items: center;
 			&:hover {
-				background-color: #095864;
+				background-color: $subMenuHover;
 			}
 			&.on {
 				color: #fff;
-				background-color: #095864;
+				background-color: $subMenuHover;
 				.menu-drop__icon {
 					&:before {
 						content: "";
