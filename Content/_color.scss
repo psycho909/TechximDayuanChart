@@ -8,9 +8,11 @@ $pinkPurple: #bb97b9;
 $jungleGreen: #039440;
 
 // 選單
-$menuBg: #343a40;
+$menuBg: #0d2137;
 // 選單線
-$menuBorder: #606060;
+$menuBorder: #5de5b1;
+// 選單顏色
+$menuColor: #5de5b1;
 // 選單hover
 $menuHover: #343a40;
 // 選單當前頁面
@@ -22,8 +24,8 @@ $subMenuHover: #095864;
 $subMenuCurr: #095864;
 
 // 標題顏色
-$slogan: #183380;
-
+$slogan: #fff;
+// 12A8A6
 // 按鈕顏色
 $btnColor: #17a2b8;
 
@@ -38,7 +40,7 @@ $resultBox: #eee;
 $suggest: #17a2b8;
 
 // 背景色
-$container: #f4f6f9;
+$container: lighten(#0d2137, 15);
 .red {
 	color: red;
 }

@@ -26,9 +26,9 @@
 		color: $slogan;
 	}
 	&-box {
-		background-color: $mainBg;
-		border-radius: 16px;
-		border: 1px solid $mainBorder;
+		background-color: rgba(#359296, 0.25);
+		// border-radius: 16px;
+		border: 1px solid #359296;
 		padding: 12px;
 		align-self: flex-start;
 	}
@@ -52,11 +52,12 @@
 	&-info {
 	}
 	&-result {
-		padding: 12px 12px;
+		// padding: 12px 12px;
 		box-shadow: 0 2px 2px rgba(#000, 0.15);
-		border-radius: 12px;
+		// border-radius: 12px;
 		margin-bottom: 16px;
-		border-left: 4px solid $result;
+		border-left: 4px solid #359296;
+		row-gap: 0;
 		&__row {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -69,16 +70,21 @@
 		&__box {
 			width: 100%;
 			padding: 6px;
-			background-color: $resultBox;
-			border-radius: 6px;
+			color: #fff;
+			&:nth-child(odd) {
+				background-color: rgba(#0d2137, 0.5);
+			}
+			// background-color: $resultBox;
+			// border-radius: 6px;
 			// margin-bottom: 16px;
 		}
 	}
 	&-suggest {
-		background-color: $suggest;
+		// background-color: rgba(#359296, 0.25);
 		color: #fff;
 		padding: 12px;
-		border-radius: 12px;
+		// border-radius: 12px;
+		border: 1px solid rgba(#359296, 0.75);
 		&__title {
 			display: flex;
 			align-items: center;

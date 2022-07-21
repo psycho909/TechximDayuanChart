@@ -1,6 +1,9 @@
 .menu {
-	width: 260px;
+	width: 240px;
+	flex-shrink: 0;
 	background-color: $menuBg;
+	border-right: 4px solid rgba(lighten(#0d2239, 10), 0.5);
+	// box-shadow: 3px 0 6px rgba(darken(#0d2239, 15), 0.5);
 	&.on {
 		width: 60px;
 		z-index: 2;
@@ -104,11 +107,11 @@
 		cursor: pointer;
 	}
 	&-title {
-		color: #fff;
+		color: $menuColor;
 		font-size: 20px;
 		text-align: center;
 		padding: 16px 0;
-		border-bottom: 1px solid $menuBorder;
+		border-bottom: 1px solid rgba($menuBorder, 0.5);
 	}
 	&-ul {
 		font-size: 16px;
@@ -124,11 +127,12 @@
 		display: block;
 		position: relative;
 		text-decoration: none;
-		color: #fff;
+		color: $menuColor;
 		display: flex;
 		align-items: center;
 		&:hover {
-			background-color: lighten($menuBg, 15);
+			// background-color: lighten($menuBg, 15);
+			background-image: linear-gradient(to right, rgba(#36cfcd, 0.5), rgba($menuBg, 0.5));
 		}
 		&[data-page="drain"] {
 			.menu-link__icon {
@@ -151,7 +155,8 @@
 			}
 		}
 		&.on {
-			background: $menuCurr;
+			// background: $menuCurr;
+			background-image: linear-gradient(to left, rgba(#36cfcd, 0.5), rgba($menuBg, 0.5));
 		}
 		&__icon {
 			width: 28px;
@@ -185,23 +190,24 @@
 			background-image: url(./img/icon-slide.png);
 		}
 		&__ul {
-			background: darken($menuBg, 10);
+			background: #000e21;
 			display: none;
 		}
 		&__link {
 			padding: 16px 0 16px 60px;
-			color: #656565;
+			color: darken($menuColor, 25);
 			text-decoration: none;
 			display: block;
 			width: 100%;
 			display: flex;
 			align-items: center;
 			&:hover {
-				background-color: $subMenuHover;
+				// background-color: $subMenuHover;
+				background-image: linear-gradient(to left, $subMenuHover, darken($subMenuHover, 5));
 			}
 			&.on {
 				color: #fff;
-				background-color: $subMenuHover;
+				background-image: linear-gradient(to right, $subMenuHover, darken($subMenuHover, 15));
 				.menu-drop__icon {
 					&:before {
 						content: "";
@@ -211,7 +217,7 @@
 						top: 50%;
 						left: 50%;
 						transform: translate(-50%, -50%);
-						background-color: #fff;
+						background-color: $menuColor;
 						border-radius: 50%;
 					}
 				}
@@ -222,7 +228,8 @@
 			height: 20px;
 			margin-right: 14px;
 			align-items: center;
-			border: 1px solid #eee;
+			border: 1px solid darken($menuColor, 25);
+			box-shadow: 0 0 6px $menuColor;
 			border-radius: 50%;
 			position: relative;
 		}
