@@ -16,7 +16,7 @@ function Pie(dom, data) {
 		// hover懸浮框
 		tooltip: {
 			trigger: "item",
-			borderColor: "#FAC858" // 懸浮框顏色
+			borderColor: "#fece16" // 懸浮框顏色
 		},
 		series: [
 			{
@@ -47,14 +47,14 @@ function Doughnut(dom, title, data) {
 		// hover 懸浮框
 		tooltip: {
 			trigger: "item",
-			borderColor: "#FAC858" // 懸浮框顏色
+			borderColor: "#fece16" // 懸浮框顏色
 		},
 		title: {
 			text: title,
 			left: "center",
 			top: "center",
 			textStyle: {
-				color: "#5de5b1"
+				color: "#fece16"
 			}
 		},
 		series: [
@@ -104,10 +104,13 @@ function Bar(dom, data) {
 			axisPointer: {
 				type: "shadow"
 			},
-			borderColor: "#FAC858" // 懸浮框顏色
+			borderColor: "#fece16" // 懸浮框顏色
 		},
 		// 設置每個bar產生的name label
 		legend: {
+			textStyle: {
+				color: "#fff"
+			}
 			// 方向
 			// orient: "vertical",
 			// 位置

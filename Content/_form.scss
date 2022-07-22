@@ -29,10 +29,14 @@
 		align-items: center;
 		padding: 6px 8px;
 		color: $menuColor;
-		background-color: rgba(#359296, 0.25);
+		background-color: rgba($color2, 0.25);
 		// border-radius: 16px;
-		border: 1px solid #359296;
+		border: 1px solid rgba($color2, 0.75);
 		padding: 12px;
+		transition: all 0.3s;
+		&:hover {
+			box-shadow: inset -28px 0 28px rgba($color2, 0.25);
+		}
 		@include media(1024px) {
 			flex-direction: column;
 			align-items: flex-start;
@@ -61,14 +65,14 @@
 			}
 		}
 		&__submit {
-			background-color: rgba(#5de5b1, 0.1);
-			border: 1px solid darken(#5de5b1, 25);
+			background-color: rgba($color3, 0.5);
+			border: 1px solid darken($color3, 5);
 			color: #fff;
 			padding: 10px 18px;
 			// border-radius: 12px;
 			cursor: pointer;
 			&:hover {
-				background-color: rgba(#5de5b1, 0.6);
+				background-color: rgba($color3, 0.6);
 			}
 		}
 	}

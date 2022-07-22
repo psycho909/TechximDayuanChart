@@ -2,7 +2,7 @@
 	width: 240px;
 	flex-shrink: 0;
 	background-color: $menuBg;
-	border-right: 4px solid rgba(lighten(#0d2239, 10), 0.5);
+	border-right: 4px solid rgba(lighten($color1, 35), 0.5);
 	// box-shadow: 3px 0 6px rgba(darken(#0d2239, 15), 0.5);
 	&.on {
 		width: 60px;
@@ -132,7 +132,7 @@
 		align-items: center;
 		&:hover {
 			// background-color: lighten($menuBg, 15);
-			background-image: linear-gradient(to right, rgba(#36cfcd, 0.5), rgba($menuBg, 0.5));
+			background-image: linear-gradient(to right, rgba(#fece16, 0.5), rgba($menuBg, 0.5));
 		}
 		&[data-page="drain"] {
 			.menu-link__icon {
@@ -156,7 +156,7 @@
 		}
 		&.on {
 			// background: $menuCurr;
-			background-image: linear-gradient(to left, rgba(#36cfcd, 0.5), rgba($menuBg, 0.5));
+			background-image: linear-gradient(to left, rgba(#fece16, 0.5), rgba($menuBg, 0.5));
 		}
 		&__icon {
 			width: 28px;
@@ -190,7 +190,7 @@
 			background-image: url(./img/icon-slide.png);
 		}
 		&__ul {
-			background: #000e21;
+			background: lighten($menuBg, 5);
 			display: none;
 		}
 		&__link {
