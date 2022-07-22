@@ -52,7 +52,10 @@ function Doughnut(dom, title, data) {
 		title: {
 			text: title,
 			left: "center",
-			top: "center"
+			top: "center",
+			textStyle: {
+				color: "#5de5b1"
+			}
 		},
 		series: [
 			{

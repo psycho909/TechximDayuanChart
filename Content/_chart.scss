@@ -2,6 +2,14 @@
 	justify-content: center;
 	&__box {
 		width: 100%;
+		// background-color: rgba(53, 146, 150, 0.15);
+		background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.15), rgba(53, 146, 150, 0.45));
+		border: 1px solid #359296;
+		transition: box-shadow 0.3s;
+		&:hover {
+			box-shadow: 0 0 6px rgba(#359296, 0.5);
+			background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.15), rgba(53, 146, 150, 0.45));
+		}
 	}
 	&__title {
 		font-size: 24px;

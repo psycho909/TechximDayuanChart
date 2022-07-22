@@ -27,8 +27,12 @@
 		margin-bottom: 16px;
 		display: flex;
 		align-items: center;
-		padding: 22px 16px;
+		padding: 6px 8px;
 		color: $menuColor;
+		background-color: rgba(#359296, 0.25);
+		// border-radius: 16px;
+		border: 1px solid #359296;
+		padding: 12px;
 		@include media(1024px) {
 			flex-direction: column;
 			align-items: flex-start;
