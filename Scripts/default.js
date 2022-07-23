@@ -27,7 +27,13 @@ function Pie(dom, data) {
 					// b 數據名
 					// c 數據值
 					formatter: "{b}\n{c}",
-					position: "inside"
+					position: "inside",
+					textStyle: {
+						color: "#fff",
+						fontWeight: "bold",
+						textShadowColor: "#000",
+						textShadowBlur: 2
+					}
 				},
 				data: data,
 				color: color,
@@ -66,7 +72,13 @@ function Doughnut(dom, title, data) {
 					// b 數據名
 					// c 數據值
 					formatter: "{b}\n{c}",
-					position: "inside"
+					position: "inside",
+					textStyle: {
+						color: "#fff",
+						fontWeight: "bold",
+						textShadowColor: "#000",
+						textShadowBlur: 2
+					}
 				},
 				data: data,
 				color: color,
@@ -91,7 +103,13 @@ function Bar(dom, data) {
 			type: "bar",
 			stack: "total",
 			label: {
-				show: true
+				show: true,
+				textStyle: {
+					color: "#fff",
+					fontWeight: "bold",
+					textShadowColor: "#000",
+					textShadowBlur: 2
+				}
 			},
 			emphasis: {
 				focus: "series"
