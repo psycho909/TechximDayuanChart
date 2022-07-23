@@ -1,3 +1,5 @@
+var color = ["#57F4F9", "#FCBE2E", "#04FF00", "#ADEDC3", "#256FA2", "#fcea16", "#fca626", "#FE3D67", "#C0FF6A", "#FE3D67", "#64BFF5"];
+
 function _initMap() {
 	map = new google.maps.Map(document.getElementById("map"), {
 		center: { lat: 25.0623841, lng: 121.1425703 },
@@ -28,7 +30,7 @@ function Pie(dom, data) {
 					position: "inside"
 				},
 				data: data,
-				color: ["#ACACAC", "#F5843F", "#3164BE", "#FAC200"],
+				color: color,
 				radius: "60%"
 			}
 		]
@@ -67,7 +69,7 @@ function Doughnut(dom, title, data) {
 					position: "inside"
 				},
 				data: data,
-				color: ["#ACACAC", "#F5843F", "#3164BE", "#FAC200"],
+				color: color,
 				radius: ["40%", "80%"]
 			}
 		]
