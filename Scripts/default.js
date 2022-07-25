@@ -186,5 +186,13 @@ $(".menu-drop").on("click", function () {
 // 選單加上on
 document.addEventListener("DOMContentLoaded", function () {
 	var _page = location.pathname.split("/").at(-1);
-	$("[data-page=" + _page + "]").addClass("on");
+	$("[data-page]").each(function (i, v) {
+		var _data = $(v).attr("data-page");
+		if (_data == _page) {
+			if ($(v).hasClass("menu-drop__link")) {
+				$(v).closest(".menu-li").find(".menu-drop").addClass("slide").addClass("on");
+			}
+			$(v).addClass("on");
+		}
+	});
 });
