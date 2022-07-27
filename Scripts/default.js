@@ -120,7 +120,7 @@ function Bar(dom, data) {
 			axisPointer: {
 				type: "shadow"
 			},
-			borderColor: "#fece16" // 懸浮框顏色
+			borderColor: borderColor // 懸浮框顏色
 		},
 		// 設置每個bar產生的name label
 		legend: {
