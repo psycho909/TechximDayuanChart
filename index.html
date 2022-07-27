@@ -1,27 +1,16 @@
 <!DOCTYPE html>
-
 <html lang="zh-Hant-TW">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>大園區水利工程及災害防汛資訊系統 - 分析統計表</title>
-		<!-- Bootstrap -->
-		<link href="/TechximDayuan/vendors/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="/TechximDayuan/Content/default.css" />
-		<link href="/TechximDayuan/Content/jsgrid.min.css" rel="stylesheet" />
-		<link href="/TechximDayuan/Content/jsgrid-theme.min.css" rel="stylesheet" />
-		<link href="/TechximDayuan/vendors/select2/dist/css/select2.min.css" rel="stylesheet" />
-		<script src="/TechximDayuan/vendors/isMobile.min.js"></script>
-		<script src="/TechximDayuan/vendors/jquery/dist/jquery.min.js"></script>
-		<script src="/TechximDayuan/vendors/jquery.mCustomScrollbar.concat.min.js"></script>
-		<script src="/TechximDayuan/vendors/echarts.min.js"></script>
-		<script src="/TechximDayuan/vendors/select2/dist/js/select2.min.js"></script>
-		<script src="/TechximDayuan/Scripts/jquery.blockUI.js"></script>
-		<script src="/TechximDayuan/Scripts/jsgrid.min.js"></script>
-		<script src="/TechximDayuan/Scripts/i18n/jsgrid-zh-tw.js"></script>
-
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN9bmjbWQ8eYZh9YvzBeFuEKurroVxwmw&callback=_initMap&libraries=places" defer></script>
+		<link href="./vendors/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="./Content/default.css" />
+		<script src="./vendors/isMobile.min.js"></script>
+		<script src="./vendors/jquery/dist/jquery.min.js"></script>
+		<script src="./vendors/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="./vendors/echarts.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -33,13 +22,13 @@
 				</div>
 				<ul class="menu-ul">
 					<li class="menu-li">
-						<a href="/TechximDayuan/DataAnalysis/Index" class="menu-link on" data-page="drain">
+						<a href="index.html" class="menu-link on" data-page="drain">
 							<span class="menu-link__icon"></span>
 							<span class="menu-link__text">其他排水分析</span>
 						</a>
 					</li>
 					<li class="menu-li">
-						<a href="/TechximDayuan/DataAnalysis/Cable" class="menu-link" data-page="cable">
+						<a href="cable.html" class="menu-link" data-page="cable">
 							<span class="menu-link__icon"></span>
 							<span class="menu-link__text">纜線分析</span>
 						</a>
@@ -51,13 +40,13 @@
 						</a>
 						<ul class="menu-drop__ul">
 							<li class="menu-drop__li">
-								<a href="/TechximDayuan/DataAnalysis/Manhole" class="menu-drop__link">
+								<a href="manhole.html" class="menu-drop__link">
 									<span class="menu-drop__icon"></span>
 									<span class="menu-drop__text">人孔分析</span>
 								</a>
 							</li>
 							<li class="menu-drop__li">
-								<a href="/TechximDayuan/DataAnalysis/Pipeline" class="menu-drop__link">
+								<a href="pipeline.html" class="menu-drop__link">
 									<span class="menu-drop__icon"></span>
 									<span class="menu-drop__text">管線分析</span>
 								</a>
@@ -65,7 +54,7 @@
 						</ul>
 					</li>
 					<li class="menu-li">
-						<a href="/TechximDayuan/DataAnalysis/Flood" class="menu-link" data-page="flood">
+						<a href="flood.html" class="menu-link" data-page="flood">
 							<span class="menu-link__icon"></span>
 							<span class="menu-link__text">淹水調查分析</span>
 						</a>
@@ -76,86 +65,91 @@
 			<div class="main">
 				<h1 class="main-slogan">大園區水利工程及災害防汛資訊系統</h1>
 				<!-- 標題 -->
-				<div class="main-title">淹水調查分析面板</div>
+				<div class="main-title">其他排水分析面板</div>
 				<!-- 控制區塊 -->
-
-				<!-- 控制區塊 -->
-				<div class="main-box">
-					<form id="conditionForm" class="main-form">
-						<div class="main-col">
-							<div class="main-control__title">年度:</div>
-							<select class="main-control__select main-control__select--s" id="StartYear" name="StartYear" data-select="StartYear">
-								<option value="-1">請選擇</option>
-								<option value="111">111</option>
-								<option value="110">110</option>
-								<option value="109">109</option>
-								<option value="108">108</option>
-							</select>
-							<span class="main-control__dash">-</span>
-							<select class="main-control__select main-control__select--s" id="EndYear" name="EndYear" data-select="EndYear">
-								<option value="-1">請選擇</option>
-								<option value="111">111</option>
-								<option value="110">110</option>
-								<option value="109">109</option>
-								<option value="108">108</option>
-							</select>
-						</div>
-						<div class="main-col"></div>
-						<div class="main-col">
-							<button type="button" class="main-control__submit" onclick="_search()">查詢</button>
-						</div>
-					</form>
+				<div class="main-form main-box">
+					<div class="main-col">
+						<div class="main-control__title">年度:</div>
+						<select class="main-control__select main-control__select--s" id="year1" data-select="year1">
+							<option value="-1">請選擇</option>
+							<option value="a">大園都市計畫</option>
+							<option value="b">大園(菓林)都市計畫</option>
+							<option value="c">桃園航空貨通園區暨客運園區(大園南港地區)特定計里</option>
+						</select>
+						<span class="main-control__dash">-</span>
+						<select class="main-control__select main-control__select--s" id="year2" data-select="year2">
+							<option value="-1">請選擇</option>
+							<option value="a">大園都市計畫</option>
+							<option value="b">大園(菓林)都市計畫</option>
+							<option value="c">桃園航空貨通園區暨客運園區(大園南港地區)特定計里</option>
+						</select>
+					</div>
+					<div class="main-col">
+						<div class="main-control__title">排水路名稱:</div>
+						<select class="main-control__select" id="road" data-select="road">
+							<option value="-1">請選擇</option>
+							<option value="a">大園都市計畫</option>
+							<option value="b">大園(菓林)都市計畫</option>
+							<option value="c">桃園航空貨通園區暨客運園區(大園南港地區)特定計里</option>
+						</select>
+					</div>
+					<div class="main-col">
+						<button type="button" class="main-control__submit">查詢</button>
+					</div>
 				</div>
 				<div class="main-content">
 					<!-- 地圖區塊 -->
 					<div id="map" class="main-map main-box"></div>
 					<div class="main-info main-box">
+						<!-- 訊息區塊 -->
+						<div class="main-result grid grid--2">
+							<div class="main-result__box grid-span--2">
+								<span class="main-result__text">其他排水總長度</span>
+								<span class="main-result__data">110000m</span>
+							</div>
+							<div class="main-result__box grid-span--2">
+								<span class="main-result__text">本年度調查長度(上半年)</span>
+								<span class="main-result__data">110000m</span>
+							</div>
+							<div class="main-result__box grid-span--2">
+								<span class="main-result__text">本年度調查長度(下半年)</span>
+								<span class="main-result__data">110000m</span>
+							</div>
+							<div class="main-result__box grid-span--2">
+								<span class="main-result__text">本年度清淤長度</span>
+								<span class="main-result__data">90000m</span>
+							</div>
+						</div>
 						<!-- 建議方針區塊 -->
 						<div class="main-suggest">
 							<div class="main-suggest__title">
 								<span>建議督導方針</span>
 							</div>
 							<div class="main-suggest__content">
-								<p>改善效率<span class="yellow">低(<=50)、普遍(50< <=70)、高(70< <=100)</span></p>
-								<label class="suggest__content_details"></label>
-								<p>常發生淹水原因(前5名)</p>
-								<label class="suggest__content_details"></label>
-								<p>淹水深度較多比例為</p>
-								<label class="suggest__content_details"></label>
-								<p>淹水是發生月份(前3名)</p>
-								<label class="suggest__content_details"></label>
+								<p>NG數量較多排水</p>
+								<p>立即改善較多排水</p>
+								<p>注意改善較多排水</p>
+								<p>計畫改善較多排水</p>
+								<p>需加強督導排水路</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- 圖表區塊 -->
-				<div class="main-chart main-box grid grid--12">
-					<div class="main-chart__box grid-span--12">
-						<div class="main-chart__title">發生時機</div>
-						<div id="flood-bar" class="main-chart__data grid-span--4" data-chart="bar"></div>
+				<div class="main-chart grid grid--12">
+					<!-- 改善情形 -->
+					<div class="main-chart__box grid grid--12 grid-span--6">
+						<div id="A" class="main-chart__data grid-span--12" data-chart="doughnut"></div>
 					</div>
-					<div class="main-chart__box grid grid--12 grid-span--12">
-						<div class="grid-span--4">
-							<div class="main-chart__title">辦理情形</div>
-							<div id="flood-a" class="main-chart__data" data-chart="doughnut"></div>
-						</div>
-						<div class="grid-span--4">
-							<div class="main-chart__title">原因比例</div>
-							<div id="flood-b" class="main-chart__data" data-chart="doughnut"></div>
-						</div>
-						<div class="grid-span--4">
-							<div class="main-chart__title">淹水深度</div>
-							<div id="flood-c" class="main-chart__data" data-chart="doughnut"></div>
-						</div>
+					<!-- 檢查結果 -->
+					<div class="main-chart__box grid grid--12 grid-span--6">
+						<div id="B" class="main-chart__data grid-span--12" data-chart="doughnut"></div>
 					</div>
 				</div>
-
-				<script type="text/javascript" src="/TechximDayuan/Scripts/Map/CCTS_API.js"></script>
-				<script type="text/javascript" src="/TechximDayuan/Scripts/Map/VillageMap.js"></script>
-				<script src="/TechximDayuan/Scripts/View/flood.js"></script>
 			</div>
 		</div>
-
-		<script src="/TechximDayuan/Scripts/View/default.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN9bmjbWQ8eYZh9YvzBeFuEKurroVxwmw&callback=_initMap&libraries=places" async defer></script>
+		<script src="./Scripts/default.js"></script>
+		<script src="./Scripts/drain.js"></script>
 	</body>
 </html>

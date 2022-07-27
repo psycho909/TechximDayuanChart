@@ -1,4 +1,14 @@
-var color = ["#57F4F9", "#FCBE2E", "#04FF00", "#ADEDC3", "#256FA2", "#fcea16", "#fca626", "#FE3D67", "#C0FF6A", "#FE3D67", "#64BFF5"];
+var color = ["#57F4F9", "#FCBE2E", "#ADEDC3", "#256FA2", "#fcea16", "#fca626", "#FE3D67", "#C0FF6A", "#FE3D67", "#64BFF5"];
+var textStyle = {
+	color: "#fff",
+	fontSize: 15,
+	fontWeight: "bold",
+	textBorderWidth: 1,
+	textBorderColor: "rgba(0,0,0,.5)",
+	textShadowColor: "#000",
+	textShadowBlur: 2
+};
+var borderColor = "#fece16";
 
 function _initMap() {
 	map = new google.maps.Map(document.getElementById("map"), {
@@ -18,7 +28,7 @@ function Pie(dom, data) {
 		// hover懸浮框
 		tooltip: {
 			trigger: "item",
-			borderColor: "#fece16" // 懸浮框顏色
+			borderColor: borderColor // 懸浮框顏色
 		},
 		series: [
 			{
@@ -26,20 +36,15 @@ function Pie(dom, data) {
 				label: {
 					// b 數據名
 					// c 數據值
-					formatter: "{b}\n{c}",
+					formatter: "{d}%",
 					position: "inside",
-					textStyle: {
-						color: "#fff",
-						fontWeight: "bold",
-						textShadowColor: "#000",
-						textShadowBlur: 2
-					}
+					textStyle: textStyle
 				},
 				data: data,
-				color: color,
 				radius: "60%"
 			}
-		]
+		],
+		color: color
 	};
 	myChart.setOption(option);
 	window.addEventListener("resize", myChart.resize);
@@ -55,14 +60,14 @@ function Doughnut(dom, title, data) {
 		// hover 懸浮框
 		tooltip: {
 			trigger: "item",
-			borderColor: "#fece16" // 懸浮框顏色
+			borderColor: borderColor // 懸浮框顏色
 		},
 		title: {
 			text: title,
 			left: "center",
 			top: "center",
 			textStyle: {
-				color: "#fece16"
+				color: borderColor
 			}
 		},
 		series: [
@@ -71,20 +76,15 @@ function Doughnut(dom, title, data) {
 				label: {
 					// b 數據名
 					// c 數據值
-					formatter: "{b}\n{c}",
+					formatter: "{d}%",
 					position: "inside",
-					textStyle: {
-						color: "#fff",
-						fontWeight: "bold",
-						textShadowColor: "#000",
-						textShadowBlur: 2
-					}
+					textStyle: textStyle
 				},
 				data: data,
-				color: color,
 				radius: ["40%", "80%"]
 			}
-		]
+		],
+		color: color
 	};
 	myChart.setOption(option);
 	window.addEventListener("resize", myChart.resize);
@@ -101,15 +101,11 @@ function Bar(dom, data) {
 		return p.concat({
 			name: c.name,
 			type: "bar",
-			stack: "total",
+			stack: "Ad",
 			label: {
 				show: true,
-				textStyle: {
-					color: "#fff",
-					fontWeight: "bold",
-					textShadowColor: "#000",
-					textShadowBlur: 2
-				}
+				formatter: "{c}",
+				textStyle: textStyle
 			},
 			emphasis: {
 				focus: "series"
@@ -146,13 +142,22 @@ function Bar(dom, data) {
 			containLabel: true
 		},
 		yAxis: {
-			type: "value"
+			type: "value",
+			min: 0,
+			max: 100,
+			axisLabel: {
+				color: "#fff"
+			}
 		},
 		xAxis: {
 			type: "category",
-			data: data.x
+			data: data.x,
+			axisLabel: {
+				color: "#fff"
+			}
 		},
-		series: series
+		series: series,
+		color: color
 	};
 	myChart.setOption(option);
 	window.addEventListener("resize", myChart.resize);

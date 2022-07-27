@@ -1,25 +1,78 @@
+var ResultStat = [
+	{
+		OperatorName: "北桃園",
+		ImproveCount: 96,
+		NotImproveCount: 95
+	},
+	{
+		OperatorName: "未知",
+		ImproveCount: 11,
+		NotImproveCount: 69
+	},
+	{
+		OperatorName: "北健",
+		ImproveCount: 115,
+		NotImproveCount: 53
+	},
+	{
+		OperatorName: "無纜線",
+		ImproveCount: 501,
+		NotImproveCount: 16
+	},
+	{
+		OperatorName: "台灣固網",
+		ImproveCount: 25,
+		NotImproveCount: 15
+	},
+	{
+		OperatorName: "新世紀",
+		ImproveCount: 23,
+		NotImproveCount: 7
+	},
+	{
+		OperatorName: "佳光",
+		ImproveCount: 7,
+		NotImproveCount: 2
+	},
+	{
+		OperatorName: "亞太",
+		ImproveCount: 3,
+		NotImproveCount: 2
+	},
+	{
+		OperatorName: "南桃園",
+		ImproveCount: 1,
+		NotImproveCount: 0
+	},
+	{
+		OperatorName: "警用纜線",
+		ImproveCount: 1,
+		NotImproveCount: 0
+	}
+];
+var operatorName = [];
+var improveCount = [];
+var notImproveCount = [];
+ResultStat.forEach(function (v, i) {
+	var _ImproveCount = 0;
+	var _NotImproveCount = 0;
+	_ImproveCount = Math.round((v.ImproveCount / (v.ImproveCount + v.NotImproveCount)) * 100);
+	_NotImproveCount = Math.round((v.NotImproveCount / (v.ImproveCount + v.NotImproveCount)) * 100);
+	operatorName.push(v.OperatorName);
+	improveCount.push(_ImproveCount);
+	notImproveCount.push(_NotImproveCount);
+});
+console.log(improveCount, notImproveCount);
 var BarData = {
-	x: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+	x: operatorName,
 	datas: [
 		{
-			name: "Direct",
-			data: [320, 302, 301, 334, 390, 330, 320]
+			name: "改善",
+			data: improveCount
 		},
 		{
-			name: "Mail Ad",
-			data: [120, 132, 101, 134, 90, 230, 210]
-		},
-		{
-			name: "Affiliate Ad",
-			data: [220, 182, 191, 234, 290, 330, 310]
-		},
-		{
-			name: "Video Ad",
-			data: [150, 212, 201, 154, 190, 330, 410]
-		},
-		{
-			name: "Search Engine",
-			data: [820, 832, 901, 934, 1290, 1330, 1320]
+			name: "未改善",
+			data: notImproveCount
 		}
 	]
 };
