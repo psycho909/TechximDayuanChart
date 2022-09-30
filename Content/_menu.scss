@@ -1,7 +1,7 @@
 .menu {
 	width: 240px;
 	flex-shrink: 0;
-	background-color: $menuBg;
+	background-color: $color1;
 	border-right: 4px solid rgba(lighten($color1, 35), 0.5);
 	// box-shadow: 3px 0 6px rgba(darken(#0d2239, 15), 0.5);
 	&.on {
@@ -111,7 +111,7 @@
 		font-size: 20px;
 		text-align: center;
 		padding: 16px 0;
-		border-bottom: 1px solid rgba($menuBorder, 0.5);
+		border-bottom: 1px solid rgba($color2, 0.5);
 	}
 	&-ul {
 		font-size: 16px;
@@ -131,8 +131,8 @@
 		display: flex;
 		align-items: center;
 		&:hover {
-			// background-color: lighten($menuBg, 15);
-			background-image: linear-gradient(to right, rgba(#fece16, 1), rgba($menuBg, 0.5));
+			// background-color: lighten($color1, 15);
+			background-image: linear-gradient(to right, rgba($color2, 1), rgba($color1, 0.5));
 		}
 		&[data-page="drain"] {
 			.menu-link__icon {
@@ -156,7 +156,7 @@
 		}
 		&.on {
 			// background: $menuCurr;
-			background-image: linear-gradient(to left, rgba(#fece16, 1), rgba($menuBg, 0.5));
+			background-image: linear-gradient(to left, rgba($color2, 1), rgba($color1, 0.5));
 		}
 		&__icon {
 			width: 28px;
@@ -190,7 +190,7 @@
 			background-image: url(./img/icon-slide.png);
 		}
 		&__ul {
-			background: lighten($menuBg, 5);
+			background: lighten($color1, 5);
 			display: none;
 		}
 		&__link {
@@ -203,11 +203,11 @@
 			align-items: center;
 			&:hover {
 				// background-color: $subMenuHover;
-				background-image: linear-gradient(to left, rgba(#fece16, 0.5), rgba($menuBg, 0.5));
+				background-image: linear-gradient(to left, rgba($color2, 0.5), rgba($color1, 0.5));
 			}
 			&.on {
 				color: #fff;
-				background-image: linear-gradient(to right, rgba(#fece16, 0.5), rgba($menuBg, 0.5));
+				background-image: linear-gradient(to right, rgba($color2, 0.5), rgba($color1, 0.5));
 				.menu-drop__icon {
 					&:before {
 						content: "";

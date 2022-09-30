@@ -78,9 +78,6 @@
 			&:nth-child(odd) {
 				background-color: rgba(lighten($color1, 35), 0.15);
 			}
-			// background-color: $resultBox;
-			// border-radius: 6px;
-			// margin-bottom: 16px;
 		}
 	}
 	&-suggest {
